@@ -1,0 +1,27 @@
+
+ select {
+    vertical-align: middle;
+    font-size:100%;
+    position: absolute;
+    left: 650px;
+    top:180px;
+}
+#demo
+{ 
+    position: absolute;
+    left: 450px;
+    top:250px; 
+    font-weight: bold;
+    color: #0000AA;
+    font-size: 20px;
+    
+}
+#demo2
+{ 
+    position: absolute;
+    left: 650px;
+    top:300px; 
+    color:blue;
+    font-style: italic;
+    font-size: 18px;    
+}
