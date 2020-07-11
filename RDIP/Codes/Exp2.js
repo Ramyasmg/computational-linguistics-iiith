@@ -51,11 +51,13 @@ var text2=[
 "वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]];
 
 var navButtons = document.getElementById("nav-buttons");
-
+sentences='';
+var f;
+var totalb,i;
 function getChoice(v)
 {
-    document.getElementById("demo").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
-    document.getElementById("demo2").innerHTML="(Select the buttons in proper order)";
+    document.getElementById("disp1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
+    document.getElementById("disp2").innerHTML="(Select the buttons in proper order)";
     if(v === "null")
     {
         alert("Select laguage");
@@ -74,20 +76,30 @@ function getChoice(v)
 }
 
 function  randomsentenceEng(text1)
- {     
+ {       
+     /* To hide all previously selected elements if language is changed */
+    f="";
+    document.getElementById("disp3").innerHTML=f;
+    sentences="";
+    document.getElementById("disp4").innerHTML=sentences;
+    r="";
+    document.getElementById("refbtn").innerHTML=r;
+
+    /* to get random sentence and to display the words in it randomly in form of buttons*/ 
     x=Math.floor(Math.random() * 10);
     str1=text1[x][0]
     str3=randomwords(str1);
     var c='';
-    var cs='';
+    var t='';
     navButtons.innerHTML='';      
-    var totalb=str3.length;
+     totalb=str3.length;
     for (var i=0; i<totalb;i++)
     {
-        c="<button id='btn"+i+"' value='"+str3[i]+"' >"+str3[i]+" </button>  ";
-        cs+=c;
+        c="<button id='btnid"+i+"' value='"+str3[i]+"' onclick='dispwords(this.value,this.id)'  >"+str3[i]+" </button>  ";
+        t=t+c;
+       
     }
-    navButtons.innerHTML=cs.trim();
+    navButtons.innerHTML=t.trim();
 
 }
 
@@ -100,20 +112,44 @@ function randomwords(st1)
 
 function  randomsentenceHin()
 {     
+    /* To hide all previously selected elements if language is changed */
+    navButtons.innerHTML='';
+    f="";
+    document.getElementById("disp3").innerHTML=f;
+    sentences="";
+    document.getElementById("disp4").innerHTML=sentences;
+    r="";
+    document.getElementById("refbtn").innerHTML=r;
    
-      var y=Math.floor(Math.random() * 7);
-      chr1=text2[y][0];
-     chr3= randomwords(chr1);
-     var c='';
-     var cs='';      
-     var totalb=chr3.length;
-     for (var i=0; i<totalb;i++)
+    
+  /* to get random sentence and to display the words in it randomly in form of buttons*/
+
+    var y=Math.floor(Math.random() * 7);
+    chr1=text2[y][0];
+    chr3= randomwords(chr1);
+    var c='';
+    var t='';      
+    var totalb=chr3.length;
+    for (var i=0; i<totalb;i++)
    {
-       c="<button id='btn"+i+"' value='"+chr3[i]+"' >"+chr3[i]+" </button>  ";
-       cs+=c;
+       c="<button id='btnid"+i+"' value='"+chr3[i]+"' onclick='dispwords(this.value,this.id)'>"+chr3[i]+" </button>  ";
+       t=t+c;
 }
-   navButtons.innerHTML=cs.trim();
+   navButtons.innerHTML=t.trim();
     
       
 }
+
+/* function to display the words(buttons) selected by user*/
+function dispwords(val,id)
+{    f= "<font color='Darkblue'>Formed Sentence</font><font color='blue'> <i>(after selecting words):</i></font><br>"
+    document.getElementById("disp3").innerHTML=f;
+    sentences=sentences+val+" ";
+    document.getElementById(id).style.display = "none";
+   document.getElementById("disp4").innerHTML=sentences;
+   r="<button id='reform' >Re-form the sentence</button>"
+    document.getElementById("refbtn").innerHTML=r;
+  
+}
+
 

@@ -6,7 +6,7 @@
     left: 650px;
     top:180px;
 }
-#demo
+#disp1
 { 
     position: absolute;
     left: 450px;
@@ -16,7 +16,7 @@
     font-size: 20px;
     
 }
-#demo2
+#disp2
 { 
     position: absolute;
     left: 650px;
@@ -25,13 +25,42 @@
     font-style: italic;
     font-size: 18px;    
 }
+#disp3
+{ 
+    position: absolute;
+    left: 650px;
+    top:450px; 
+    color:blue;
+
+    font-size: 20px;    
+}
 #nav-buttons
 {
     position: absolute;
-    left: 600px;
+    left: 500px;
     top:400px;  
 }
+
 button
 {   
     margin-right:16px;
+}
+
+#disp4
+{
+    position: absolute;
+    left: 500px;
+    top:490px; 
+    font-size: 40px; 
+    color: darkslategrey;
+    font-weight: bold;
+
+}
+#refbtn
+{
+    position: absolute;
+    left: 650px;
+    top:600px; 
+    font-size: 20px; 
+ 
 }
