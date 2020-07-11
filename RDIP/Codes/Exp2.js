@@ -54,6 +54,9 @@ var navButtons = document.getElementById("nav-buttons");
 sentences='';
 var f;
 var totalb,i;
+var count=0;
+var x,y,v1;
+
 function getChoice(v)
 {
     document.getElementById("disp1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
@@ -63,12 +66,12 @@ function getChoice(v)
         alert("Select laguage");
     }
      else if(v === "eng")
-    {
+    {    v1=v;
         randomsentenceEng(text1);
 
     }
     else if(v=== "hin")
-    { 
+    {   v1=v;
         randomsentenceHin();
        
     }
@@ -78,12 +81,16 @@ function getChoice(v)
 function  randomsentenceEng(text1)
  {       
      /* To hide all previously selected elements if language is changed */
+     totalb=0;
+     count=0;
     f="";
     document.getElementById("disp3").innerHTML=f;
     sentences="";
     document.getElementById("disp4").innerHTML=sentences;
     r="";
     document.getElementById("refbtn").innerHTML=r;
+    chk="";
+    document.getElementById("chkcrctness").innerHTML=chk;
 
     /* to get random sentence and to display the words in it randomly in form of buttons*/ 
     x=Math.floor(Math.random() * 10);
@@ -113,6 +120,8 @@ function randomwords(st1)
 function  randomsentenceHin()
 {     
     /* To hide all previously selected elements if language is changed */
+    totalb=0;
+    count=0;
     navButtons.innerHTML='';
     f="";
     document.getElementById("disp3").innerHTML=f;
@@ -120,18 +129,20 @@ function  randomsentenceHin()
     document.getElementById("disp4").innerHTML=sentences;
     r="";
     document.getElementById("refbtn").innerHTML=r;
+    chk="";
+    document.getElementById("chkcrctness").innerHTML=chk;
    
     
   /* to get random sentence and to display the words in it randomly in form of buttons*/
 
-    var y=Math.floor(Math.random() * 7);
+     y=Math.floor(Math.random() * 7);
     chr1=text2[y][0];
    // console.log(chr1)
     chr3= randomwords(chr1);
     var c='';
     var t='';   
     //console.log(chr3)   
-    var totalb=chr3.length;
+     totalb=chr3.length;
     for ( i=0; i<totalb;i++)
    {
        c="<button id='btnid"+i+"' value='"+chr3[i]+"' onclick='dispwords(this.value,this.id)'>"+chr3[i]+" </button>  ";
@@ -151,20 +162,37 @@ function dispwords(val,id)
     sentences=sentences+val+" ";
     document.getElementById(id).style.display = "none";
    document.getElementById("disp4").innerHTML=sentences;
+   count=count+1;
+    if(count===totalb)
+    {
+        chk="<button id='chkcrct' onclick='CheckSentence()'>Check the correctness of this sentence</button>"
+        document.getElementById("chkcrctness").innerHTML=chk;
+    
+    }
    r="<button id='reform' onclick='reformSentence()'>Re-form the sentence</button>"
     document.getElementById("refbtn").innerHTML=r;
+  
    
   
 }
+
+
+
+
+
+
+
 //function to reform the sentence
 function reformSentence()
-{   
+{    count=0;
     f="";
     document.getElementById("disp3").innerHTML=f;
     sentences="";
     document.getElementById("disp4").innerHTML=sentences;
      r="";
      document.getElementById("refbtn").innerHTML=r;
+     chk="";
+     document.getElementById("chkcrctness").innerHTML=chk;
 
     for(j=0;j<totalb;j++)
     {

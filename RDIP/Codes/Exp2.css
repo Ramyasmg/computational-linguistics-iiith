@@ -64,3 +64,10 @@ button
     font-size: 20px; 
  
 }
+#chkcrctness
+{
+    position: absolute;
+    left: 600px;
+    top:650px; 
+    font-size: 20px;
+}
