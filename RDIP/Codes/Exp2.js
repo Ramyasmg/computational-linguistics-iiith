@@ -93,7 +93,7 @@ function  randomsentenceEng(text1)
     var t='';
     navButtons.innerHTML='';      
      totalb=str3.length;
-    for (var i=0; i<totalb;i++)
+    for (i=0; i<totalb;i++)
     {
         c="<button id='btnid"+i+"' value='"+str3[i]+"' onclick='dispwords(this.value,this.id)'  >"+str3[i]+" </button>  ";
         t=t+c;
@@ -126,11 +126,13 @@ function  randomsentenceHin()
 
     var y=Math.floor(Math.random() * 7);
     chr1=text2[y][0];
+   // console.log(chr1)
     chr3= randomwords(chr1);
     var c='';
-    var t='';      
+    var t='';   
+    //console.log(chr3)   
     var totalb=chr3.length;
-    for (var i=0; i<totalb;i++)
+    for ( i=0; i<totalb;i++)
    {
        c="<button id='btnid"+i+"' value='"+chr3[i]+"' onclick='dispwords(this.value,this.id)'>"+chr3[i]+" </button>  ";
        t=t+c;
@@ -139,17 +141,38 @@ function  randomsentenceHin()
     
       
 }
+ 
 
 /* function to display the words(buttons) selected by user*/
 function dispwords(val,id)
-{    f= "<font color='Darkblue'>Formed Sentence</font><font color='blue'> <i>(after selecting words):</i></font><br>"
+{    
+    f= "<font color='Darkblue'>Formed Sentence</font><font color='blue'> <i>(after selecting words):</i></font><br>"
     document.getElementById("disp3").innerHTML=f;
     sentences=sentences+val+" ";
     document.getElementById(id).style.display = "none";
    document.getElementById("disp4").innerHTML=sentences;
-   r="<button id='reform' >Re-form the sentence</button>"
+   r="<button id='reform' onclick='reformSentence()'>Re-form the sentence</button>"
     document.getElementById("refbtn").innerHTML=r;
+   
   
 }
+//function to reform the sentence
+function reformSentence()
+{   
+    f="";
+    document.getElementById("disp3").innerHTML=f;
+    sentences="";
+    document.getElementById("disp4").innerHTML=sentences;
+     r="";
+     document.getElementById("refbtn").innerHTML=r;
+
+    for(j=0;j<totalb;j++)
+    {
+        document.getElementById('btnid'+j).style.display = "";
+    }
+
+
+}
+
 
 
