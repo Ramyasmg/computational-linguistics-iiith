@@ -24,4 +24,14 @@
     color:blue;
     font-style: italic;
     font-size: 18px;    
-} 
+}
+#nav-buttons
+{
+    position: absolute;
+    left: 600px;
+    top:400px;  
+}
+button
+{   
+    margin-right:16px;
+}
