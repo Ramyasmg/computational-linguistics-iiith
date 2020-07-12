@@ -91,6 +91,7 @@ function  randomsentenceEng(text1)
     document.getElementById("refbtn").innerHTML=r;
     chk="";
     document.getElementById("chkcrctness").innerHTML=chk;
+    document.getElementById("result").innerHTML="";
 
     /* to get random sentence and to display the words in it randomly in form of buttons*/ 
     x=Math.floor(Math.random() * 10);
@@ -131,6 +132,7 @@ function  randomsentenceHin()
     document.getElementById("refbtn").innerHTML=r;
     chk="";
     document.getElementById("chkcrctness").innerHTML=chk;
+    document.getElementById("result").innerHTML="";
    
     
   /* to get random sentence and to display the words in it randomly in form of buttons*/
@@ -169,6 +171,8 @@ function dispwords(val,id)
         document.getElementById("chkcrctness").innerHTML=chk;
     
     }
+
+
    r="<button id='reform' onclick='reformSentence()'>Re-form the sentence</button>"
     document.getElementById("refbtn").innerHTML=r;
   
@@ -176,7 +180,36 @@ function dispwords(val,id)
   
 }
 
-
+function CheckSentence()
+{   var r
+    if(v1 === 'eng')
+    {
+        r=text1[x].includes(sentences.trim());
+        if(text1[x].includes(sentences.trim()))
+        {
+           document.getElementById("result").innerHTML="Right answer!!!" 
+        }
+        else
+        {
+            document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
+        }
+        
+    }
+    else if(v1 === 'hin')
+    {
+        r=text2[y].includes(sentences.trim());
+        if(r==true)
+        {
+           document.getElementById("result").innerHTML="Right answer!!!" 
+        }
+        else
+        {
+            document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
+        }
+        
+        
+    }
+}
 
 
 
@@ -194,6 +227,7 @@ function reformSentence()
      chk="";
      document.getElementById("chkcrctness").innerHTML=chk;
 
+ document.getElementById("result").innerHTML="";
     for(j=0;j<totalb;j++)
     {
         document.getElementById('btnid'+j).style.display = "";

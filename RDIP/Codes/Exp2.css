@@ -71,3 +71,11 @@ button
     top:650px; 
     font-size: 20px;
 }
+#result
+{
+    position: absolute;
+    left: 600px;
+    top:680px; 
+    font-size: 30px;
+    color: green;
+}
