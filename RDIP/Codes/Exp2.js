@@ -56,6 +56,7 @@ var f;
 var totalb,i;
 var count=0;
 var x,y,v1;
+var getcrct;
 
 function getChoice(v)
 {
@@ -92,6 +93,8 @@ function  randomsentenceEng(text1)
     chk="";
     document.getElementById("chkcrctness").innerHTML=chk;
     document.getElementById("result").innerHTML="";
+    getcrct=""
+    document.getElementById("get").innerHTML=getcrct;
 
     /* to get random sentence and to display the words in it randomly in form of buttons*/ 
     x=Math.floor(Math.random() * 10);
@@ -133,6 +136,8 @@ function  randomsentenceHin()
     chk="";
     document.getElementById("chkcrctness").innerHTML=chk;
     document.getElementById("result").innerHTML="";
+    getcrct=""
+    document.getElementById("get").innerHTML=getcrct;
    
     
   /* to get random sentence and to display the words in it randomly in form of buttons*/
@@ -181,10 +186,10 @@ function dispwords(val,id)
 }
 
 function CheckSentence()
-{   var r
+{   
     if(v1 === 'eng')
     {
-        r=text1[x].includes(sentences.trim());
+       
         if(text1[x].includes(sentences.trim()))
         {
            document.getElementById("result").innerHTML="Right answer!!!" 
@@ -192,19 +197,24 @@ function CheckSentence()
         else
         {
             document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
+            getcrct="<button id='getcrct'>Get Correct sentence</button>"
+            document.getElementById("get").innerHTML=getcrct;
+
         }
         
     }
     else if(v1 === 'hin')
     {
-        r=text2[y].includes(sentences.trim());
-        if(r==true)
+       
+        if(text2[y].includes(sentences.trim()))
         {
            document.getElementById("result").innerHTML="Right answer!!!" 
         }
         else
         {
             document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
+            getcrct="<button id='getcrct'>Get Correct sentence</button>"
+            document.getElementById("get").innerHTML=getcrct;
         }
         
         
@@ -217,17 +227,20 @@ function CheckSentence()
 
 //function to reform the sentence
 function reformSentence()
-{    count=0;
+{   
+    count=0;
     f="";
     document.getElementById("disp3").innerHTML=f;
     sentences="";
     document.getElementById("disp4").innerHTML=sentences;
-     r="";
-     document.getElementById("refbtn").innerHTML=r;
-     chk="";
-     document.getElementById("chkcrctness").innerHTML=chk;
+    r="";
+    document.getElementById("refbtn").innerHTML=r;
+    chk="";
+    document.getElementById("chkcrctness").innerHTML=chk;
+    document.getElementById("result").innerHTML="";
+    getcrct=""
+    document.getElementById("get").innerHTML=getcrct;
 
- document.getElementById("result").innerHTML="";
     for(j=0;j<totalb;j++)
     {
         document.getElementById('btnid'+j).style.display = "";

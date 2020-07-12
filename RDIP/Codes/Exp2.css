@@ -4,13 +4,13 @@
     font-size:100%;
     position: absolute;
     left: 650px;
-    top:180px;
+    top:100px;
 }
 #disp1
 { 
     position: absolute;
     left: 450px;
-    top:250px; 
+    top:180px; 
     font-weight: bold;
     color: #0000AA;
     font-size: 20px;
@@ -20,26 +20,26 @@
 { 
     position: absolute;
     left: 650px;
-    top:300px; 
+    top:210px; 
     color:blue;
     font-style: italic;
     font-size: 18px;    
 }
-#disp3
-{ 
-    position: absolute;
-    left: 650px;
-    top:450px; 
-    color:blue;
 
-    font-size: 20px;    
-}
 #nav-buttons
 {
     position: absolute;
     left: 500px;
-    top:400px;  
+    top:300px;  
 }
+#disp3
+{ 
+    position: absolute;
+    left: 580px;
+    top:330px; 
+   font-size: 20px;    
+}
+
 
 button
 {   
@@ -50,17 +50,19 @@ button
 {
     position: absolute;
     left: 500px;
-    top:490px; 
+    top:360px; 
     font-size: 40px; 
     color: darkslategrey;
     font-weight: bold;
+    text-align: center;
+    
 
 }
 #refbtn
 {
     position: absolute;
     left: 650px;
-    top:600px; 
+    top:500px; 
     font-size: 20px; 
  
 }
@@ -68,14 +70,22 @@ button
 {
     position: absolute;
     left: 600px;
-    top:650px; 
+    top:550px; 
     font-size: 20px;
 }
 #result
 {
     position: absolute;
-    left: 600px;
-    top:680px; 
+    left: 635px;
+    top:600px; 
     font-size: 30px;
     color: green;
+}
+#get
+{
+    position: absolute;
+    left: 660px;
+    top:680px; 
+    font-size: 20px;
+    text-align: center;
 }
