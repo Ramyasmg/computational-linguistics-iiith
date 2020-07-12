@@ -57,6 +57,7 @@ var totalb,i;
 var count=0;
 var x,y,v1;
 var getcrct;
+var possibleanswers='';
 
 function getChoice(v)
 {
@@ -95,9 +96,12 @@ function  randomsentenceEng(text1)
     document.getElementById("result").innerHTML="";
     getcrct=""
     document.getElementById("get").innerHTML=getcrct;
+    possibleanswers='';
+    document.getElementById("dispcrct").innerHTML=possibleanswers;
 
     /* to get random sentence and to display the words in it randomly in form of buttons*/ 
     x=Math.floor(Math.random() * 10);
+    
     str1=text1[x][0]
     str3=randomwords(str1);
     var c='';
@@ -138,6 +142,8 @@ function  randomsentenceHin()
     document.getElementById("result").innerHTML="";
     getcrct=""
     document.getElementById("get").innerHTML=getcrct;
+    possibleanswers='';
+    document.getElementById("dispcrct").innerHTML=possibleanswers;
    
     
   /* to get random sentence and to display the words in it randomly in form of buttons*/
@@ -164,7 +170,7 @@ function  randomsentenceHin()
 /* function to display the words(buttons) selected by user*/
 function dispwords(val,id)
 {    
-    f= "<font color='Darkblue'>Formed Sentence</font><font color='blue'> <i>(after selecting words):</i></font><br>"
+    f= "<center><font color='Darkblue'>Formed Sentence</font><font color='blue'> <i>(after selecting words):</i></font><br></center>"
     document.getElementById("disp3").innerHTML=f;
     sentences=sentences+val+" ";
     document.getElementById(id).style.display = "none";
@@ -183,7 +189,8 @@ function dispwords(val,id)
   
    
   
-}
+}  
+
 
 function CheckSentence()
 {   
@@ -197,7 +204,7 @@ function CheckSentence()
         else
         {
             document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
-            getcrct="<button id='getcrct'>Get Correct sentence</button>"
+            getcrct="<button id='getcrct'onclick='displayCorrectAns()'>Get Correct sentence</button>"
             document.getElementById("get").innerHTML=getcrct;
 
         }
@@ -213,15 +220,126 @@ function CheckSentence()
         else
         {
             document.getElementById("result").innerHTML="<font color='Red'>Wrong answer!!!</font>"
-            getcrct="<button id='getcrct'>Get Correct sentence</button>"
+            getcrct="<button id='getcrct' onclick='displayCorrectAns()'>Get Correct Sentence</button>"
             document.getElementById("get").innerHTML=getcrct;
         }
         
         
     }
 }
+ 
+function displayCorrectAns()
+{      
+    getcrct="<button id='getcrct' onclick='hidesen()'>Hide the Correct Sentence</button>"
+    document.getElementById("get").innerHTML=getcrct;
+   
+    
+    if(v1==='eng')
+       {
+        switch (x) {
+        case 0:
+          w="3"
+          break;
+
+        case 1:
+          w = "2";
+          break;
+          
+        case 2:
+          w = "2";
+          break;
+
+        case 3:
+          w = "3";
+          break;
+
+        case 4:
+          w = "2";
+          break;
+
+        case 5:
+          w= "4";
+          break;
+
+        case  6:
+          w = "2";
+          break;
+
+        case  7:
+        w = "2";
+       break;
+
+        case  8:
+        w = "8";
+        break;
+
+        case  9:
+        w = "6";
+        break;
+      }
+
+   
+   for(k=0;k<=w-1;k++)
+   {  
+    possibleanswers="<center>"+possibleanswers+text1[x][k]+"<br></center>"
+  
+   }
+    document.getElementById("dispcrct").innerHTML=possibleanswers;
+    }
+
+else if(v1 ==="hin")
+{    possibleanswers='';
+    switch (y) {
+    case 0:
+      w="4"
+      break;
+
+    case 1:
+      w = "4";
+      break;
+      
+    case 2:
+      w = "12";
+      break;
+
+    case 3:
+      w = "6";
+      break;
+
+    case 4:
+      w = "8";
+      break;
+
+    case 5:
+      w= "4";
+      break;
+
+    case  6:
+      w = "8";
+      break;
+
+  
+  }
 
 
+for(k=0;k<=w-1;k++)
+{  
+possibleanswers="<center>"+possibleanswers+text2[y][k]+"<br></center>"
+
+}
+document.getElementById("dispcrct").innerHTML=possibleanswers;
+}
+}
+
+
+function hidesen()
+{   
+    possibleanswers='';
+    document.getElementById("dispcrct").innerHTML=possibleanswers;
+    getcrct="<button id='getcrct' onclick='displayCorrectAns()'>Get Answers</button>"
+    document.getElementById("get").innerHTML=getcrct;
+    possibleanswers='';
+}
 
 
 
@@ -240,7 +358,8 @@ function reformSentence()
     document.getElementById("result").innerHTML="";
     getcrct=""
     document.getElementById("get").innerHTML=getcrct;
-
+    possibleanswers='';
+    document.getElementById("dispcrct").innerHTML=possibleanswers;
     for(j=0;j<totalb;j++)
     {
         document.getElementById('btnid'+j).style.display = "";
@@ -248,6 +367,7 @@ function reformSentence()
 
 
 }
+
 
 
 
