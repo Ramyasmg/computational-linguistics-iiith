@@ -184,8 +184,8 @@ function dispwords(val,id)
     }
 
 
-   r="<button id='reform' onclick='reformSentence()'>Re-form the sentence</button>"
-    document.getElementById("refbtn").innerHTML=r;
+  r="<button id='reform' onclick='reformSentence()'>Re-form the sentence</button>"
+  document.getElementById("refbtn").innerHTML=r;
   
    
   
@@ -227,7 +227,7 @@ function CheckSentence()
         
     }
 }
- 
+ //Function to display Correct answers
 function displayCorrectAns()
 {      
     getcrct="<button id='getcrct' onclick='hidesen()'>Hide the Correct Sentence</button>"
@@ -331,7 +331,7 @@ document.getElementById("dispcrct").innerHTML=possibleanswers;
 }
 }
 
-
+//Function to hide sentences
 function hidesen()
 {   
     possibleanswers='';
