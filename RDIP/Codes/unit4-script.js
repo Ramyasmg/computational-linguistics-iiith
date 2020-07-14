@@ -1,4 +1,4 @@
-var c1=['A mouse was having a very bad time. She could find no food at all. She looked here and there, but there was no food, and she grew very thin. At last the mouse found a basket, full of corn. There was a small hole in the basket, and she crept in. She could just get through the hole.Then she began to eat the corn. Being very hungry, she ate a great deal, and went on eating and eating. She had grown very fat before she felt that she had had enough.When the mouse tried to climb out of the basket, she could not. She was too fat to pass through the hole. "How shall I climb out?" said the mouse. "oh, how shall I climb out?" Just then a rat came along, and he heard the mouse. "Mouse," said the rat, "if you want to climb out of the basket, you must wait till you have grown as thin as you were when you went in.']
+var c1=['A mouse was having a very bad time. She could find no food at all. She looked here and there, but there was no food, and she grew very thin. At last the mouse found a basket, full of corn. There was a small hole in the basket, and she crept in. She could just get through the hole. Then she began to eat the corn. Being very hungry, she ate a great deal, and went on eating and eating. She had grown very fat before she felt that she had had enough. When the mouse tried to climb out of the basket, she could not. She was too fat to pass through the hole. "How shall I climb out?" said the mouse. "oh, how shall I climb out?" Just then a rat came along, and he heard the mouse. "Mouse," said the rat, "if you want to climb out of the basket, you must wait till you have grown as thin as you were when you went in.']
 
 var c2=['A wolf carried off a lamb. The lamb said, " I know you are going to eat me, but before you eat me I would like to hear you play the flute. I have heard that you can play the flute better than anyone else, even the shepherd himself." The wolf was so pleased at this that he took out his flute and began to play. When he had done, the lamb insisted him to play once more and the wolf played again. The shepherd and the dogs heard the sound, and they came running up and fell on the wolf and the lamb was able to get back to the flock.'];
 
@@ -7,8 +7,92 @@ var c3=["A man had a little dog, and he was very fond of it. He would pat its he
 
 var i='<table cellspacing="-2" cellpadding="4" border="0" style="text-align:center;"><tr>#tokens:<input type="text" id="ans1" size="5"></tr><br><tr>#types :&nbsp<input type="text" id="ans2" size="5"></tr></table>'
 
-var sub='<input type="submit" id="sub" value="Submit" ></input>'
+var sub;
 
+function Validate(c)
+{  
+    g1=tokenCount(c);
+    console.log(g1);
+    g2=typeCount(c);
+    console.log(g2);
+    var a1=document.getElementById("ans1").value
+    var a2=document.getElementById("ans2").value
+    if((g1 == a1) && (g2 == a2))
+    {
+        document.getElementById("res1").innerHTML="Right Answer";
+        document.getElementById("ans1").style.backgroundColor="green";
+        document.getElementById("ans2").style.backgroundColor="green";
+        conti="<center><button id=continueid>Continue</button></center>"
+        document.getElementById("con").innerHTML=conti;
+    }
+    
+    else{
+        document.getElementById("res1").innerHTML="<font color='Red'>Wrong answer</font>";
+        if(g1 == a1 )
+        {
+            document.getElementById("ans1").style.backgroundColor="green"; 
+            
+        }
+        if(g2 == a2)
+        {
+             
+            document.getElementById("ans2").style.backgroundColor="green";
+        }
+     
+        if(!(g1 == a1)) 
+        {
+            document.getElementById("ans1").style.backgroundColor="red";
+             
+        }
+        if(!(g2 == a2)) 
+        {
+            document.getElementById("ans2").style.backgroundColor="red";
+             
+        }
+
+        
+       
+        
+
+    }
+
+}
+
+
+function tokenCount(c)
+{
+str=c;
+str= str.replace(/[^\w\s]|_/g, "")
+.replace(/\s+/g, " ");
+
+
+t2=str.split(" ");
+
+token_count=t2.length;
+
+ return token_count
+
+}
+
+
+ function typeCount(c) 
+{   str=c;
+    str= str.replace(/[^\w\s]|_/g, "")
+    .replace(/\s+/g, " ");
+
+
+    t2=str.split(" ");
+
+   s=t2.join('|').toLowerCase().split('|');
+   s =s.filter( function( item, index, inputArray ) {
+            
+           return inputArray.indexOf(item) == index;
+    });
+    type_count=s.length;
+
+    return type_count;
+
+}
 function getCorpus(v)
 {
    
@@ -17,25 +101,41 @@ function getCorpus(v)
         alert("Select Corpus");
     }
      else if(v === "corp1")
-    {   
+    {      
+        document.getElementById("res1").innerHTML="";
+        document.getElementById("con").innerHTML="";
+
         document.getElementById("dispcorpus").innerHTML=c1;
         document.getElementById("disp2").innerHTML="Enter  the number of tokens and types for the above corpus:" ;
-         document.getElementById("tab").innerHTML=i;
-         document.getElementById("subdisp").innerHTML=sub;
-
+        document.getElementById("tab").innerHTML=i;
+         sub='<input type="submit" id="sub" value="Submit" onclick="Validate(c1[0])" ></input>'
+        document.getElementById("subdisp").innerHTML=sub;
+  
     }
     else if(v=== "corp2")
     {   
+        document.getElementById("res1").innerHTML="";
+        document.getElementById("con").innerHTML="";
 
          document.getElementById("dispcorpus").innerHTML=c2;
          document.getElementById("disp2").innerHTML="Enter the number of tokens and types for the above corpus:"
          document.getElementById("tab").innerHTML=i;
+         sub='<input type="submit" id="sub" value="Submit" onclick="Validate(c2[0])" ></input>'
+         document.getElementById("subdisp").innerHTML=sub;
+       
+
     }
 	else if(v=== "corp3")
-    { 
+    {    document.getElementById("res1").innerHTML="";
+         document.getElementById("con").innerHTML="";
+
+
         document.getElementById("dispcorpus").innerHTML=c3;
         document.getElementById("disp2").innerHTML="Enter the number of tokens and types for the above corpus:"
         document.getElementById("tab").innerHTML=i;
+        sub='<input type="submit" id="sub" value="Submit" onclick="Validate(c3[0])" ></input>'
+        document.getElementById("subdisp").innerHTML=sub;
+        
     }
 
 }

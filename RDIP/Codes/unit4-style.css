@@ -49,6 +49,21 @@ select {
     position: relative;
     text-align: center;
     top: 110px;
-   
+}
 
-} 
+#res1
+{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    top: 110px;
+}
+
+#continueid
+{
+    position: relative;
+    text-align: center;
+    top: 130px;
+    
+}
