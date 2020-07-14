@@ -1,8 +1,54 @@
 select {
+ 
     vertical-align: middle;
     font-size:100%;
-    position: relative;
-    left: 650px;
-    top:60px;
+    position: absolute;
+    left: 680px;
+    top:80px;
+ 
+   
     
 }
+
+#dispcorpus
+{
+    padding: 1px;
+    width: 1024px;
+
+    text-align: center;
+    margin: 0 auto;
+    font: 18px sans-serif;
+    color: darkslategrey;
+    font-weight: normal;
+    position: relative;
+    top: 60px;
+}
+
+#disp2
+{
+
+    position: relative;
+    font: 18px sans-serif; 
+    text-align: center;
+    color: darkslategrey;
+    top: 80px;
+}
+
+#tab
+{    
+    
+    position: relative;
+    font: 18px sans-serif; 
+    text-align: center;
+    color: darkslategrey;
+    top: 90px;
+}
+
+#subdisp
+{
+    position: relative;
+    text-align: center;
+    top: 110px;
+   
+
+} 
