@@ -3,10 +3,11 @@ var c1=['A mouse was having a very bad time. She could find no food at all. She 
 var c2=['A wolf carried off a lamb. The lamb said, " I know you are going to eat me, but before you eat me I would like to hear you play the flute. I have heard that you can play the flute better than anyone else, even the shepherd himself." The wolf was so pleased at this that he took out his flute and began to play. When he had done, the lamb insisted him to play once more and the wolf played again. The shepherd and the dogs heard the sound, and they came running up and fell on the wolf and the lamb was able to get back to the flock.'];
 
 var c3=["A man had a little dog, and he was very fond of it. He would pat its head, and take it on his knee, and talk to it. Then he would give it little bits of food from his own plate. A donkey looked in at the window and saw the man and the dog. \"Why does he not make a pet of me?\" said the donkey. \"It is not fair. I work hard, and the dog only wags its tail, and barks, and jumps on its master's knee. It is not fair.\" Then the donkey said to himself, \"If I do what the dog does, he may make a pet of me.\" So the donkey ran into the room. It brayed as loudly as it could. It wagged its tail so hard that it knocked over a jar on the table. Then it tried to jump on to its master's knee. The master thought the donkey was mad, and he shouted, \"Help! Help!\" Men came running in with sticks, and they beat the donkey till it ran out of the house, and they drove it back to the field. \"I only did what the dog does,\" said the donkey,\" and yet they make a pet of the dog, and they beat me with sticks. It is not fair."]
- 
+  
 
-var i='<table cellspacing="-2" cellpadding="4" border="0" style="text-align:center;"><tr>#tokens:<input type="text" id="ans1" size="5"></tr><br><tr>#types :&nbsp<input type="text" id="ans2" size="5"></tr></table>'
-
+var i='<table ><tr><td><font size="4px" font color="darkslategrey">#tokens:</font></td><td><input type="text" id="ans1" size="5"></td></tr><tr><td><font size="4px" font color="darkslategrey">#types:</font></td><td><input type="text" id="ans2" size="5"></td></tr></table>'
+var i2='#new types:<br><input type="text" id="ans3" size="5">'
+var sub2='<input type="submit" id="sub2" value="Submit" onclick="Validate2()" ></input>'
 var sub;
 
 function Validate(c)
@@ -22,7 +23,7 @@ function Validate(c)
         document.getElementById("res1").innerHTML="Right Answer";
         document.getElementById("ans1").style.backgroundColor="green";
         document.getElementById("ans2").style.backgroundColor="green";
-        conti="<center><button id=continueid>Continue</button></center>"
+        conti="<center><button id=continueid onclick='Recalculate()'>Continue</button></center>"
         document.getElementById("con").innerHTML=conti;
     }
     
@@ -93,6 +94,26 @@ token_count=t2.length;
     return type_count;
 
 }
+
+
+function Recalculate()
+{   document.getElementById("subdisp").innerHTML="";
+    document.getElementById("res1").innerHTML="";
+    document.getElementById("con").innerHTML="";
+
+    document.getElementById("disp3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
+    document.getElementById("input2").innerHTML=i2;
+    document.getElementById("submit2").innerHTML=sub2;
+
+}
+
+
+
+
+
+
+
+
 function getCorpus(v)
 {
    
@@ -104,6 +125,13 @@ function getCorpus(v)
     {      
         document.getElementById("res1").innerHTML="";
         document.getElementById("con").innerHTML="";
+        document.getElementById("disp3").innerHTML="";
+        document.getElementById("input2").innerHTML="";
+        document.getElementById("submit2").innerHTML="";
+
+
+
+
 
         document.getElementById("dispcorpus").innerHTML=c1;
         document.getElementById("disp2").innerHTML="Enter  the number of tokens and types for the above corpus:" ;
@@ -116,6 +144,10 @@ function getCorpus(v)
     {   
         document.getElementById("res1").innerHTML="";
         document.getElementById("con").innerHTML="";
+        document.getElementById("disp3").innerHTML="";
+        document.getElementById("input2").innerHTML="";
+        document.getElementById("submit2").innerHTML="";
+
 
          document.getElementById("dispcorpus").innerHTML=c2;
          document.getElementById("disp2").innerHTML="Enter the number of tokens and types for the above corpus:"
@@ -128,6 +160,10 @@ function getCorpus(v)
 	else if(v=== "corp3")
     {    document.getElementById("res1").innerHTML="";
          document.getElementById("con").innerHTML="";
+         document.getElementById("disp3").innerHTML="";
+         document.getElementById("input2").innerHTML="";
+         document.getElementById("submit2").innerHTML="";
+ 
 
 
         document.getElementById("dispcorpus").innerHTML=c3;

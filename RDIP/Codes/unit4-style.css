@@ -33,16 +33,23 @@ select {
     color: darkslategrey;
     top: 80px;
 }
-
-#tab
-{    
+table,td
+{ 
     
-    position: relative;
-    font: 18px sans-serif; 
-    text-align: center;
-    color: darkslategrey;
-    top: 90px;
+    border-collapse:collapse;
+    border: 1px solid gray;
+     padding: 15px;
+    
+     
+    
 }
+#tab
+{   position: relative;
+    text-align: center;
+    top:100px;
+    left: 670px;
+}
+
 
 #subdisp
 {
@@ -55,7 +62,7 @@ select {
 {
     position: relative;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     color: green;
     top: 110px;
 }
@@ -66,4 +73,29 @@ select {
     text-align: center;
     top: 130px;
     
+}
+
+#disp3
+{
+
+    position: relative;
+    font: 18px sans-serif; 
+    text-align: center;
+    color: darkslategrey;
+    top: 100px;
+}
+#input2
+{
+    position: relative;
+    font: 18px sans-serif; 
+    text-align: center;
+    color: darkslategrey;
+    top: 120px; 
+}
+
+#submit2
+{
+    position: relative;
+    text-align: center;
+    top: 160px;
 }
