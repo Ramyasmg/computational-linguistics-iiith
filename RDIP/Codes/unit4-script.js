@@ -10,7 +10,8 @@ var i2='#new types:<br><input type="text" id="ans3" size="5">'
 var sub2='<input type="submit" id="sub2" value="Submit" onclick="Validate2()" ></input>'
 var sub;
 
-//var Snowball = require([Snowball]);
+
+
 var stemmer = new Snowball('English');
 stemmer.setCurrent('abbreviations');    
 stemmer.stem();
