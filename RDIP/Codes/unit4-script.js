@@ -11,18 +11,20 @@ var sub2='<input type="submit" id="sub2" value="Submit" onclick="Validate2()" ><
 var sub;
 
 
-
+string1=c1[0];
 var stemmer = new Snowball('English');
-stemmer.setCurrent('abbreviations');    
-stemmer.stem();
+stemmer.setCurrent('drinking');    
+stemmer.stem()
+console.log(stemmer.stem())
 console.log(stemmer.getCurrent());
 
 
 
 
 
+
 function Validate(c)
-{  
+{  cnew1=c;
     g1=tokenCount(c);
     console.log(g1);
     g2=typeCount(c);
@@ -34,7 +36,7 @@ function Validate(c)
         document.getElementById("res1").innerHTML="Right Answer";
         document.getElementById("ans1").style.backgroundColor="green";
         document.getElementById("ans2").style.backgroundColor="green";
-        conti="<center><button id=continueid onclick='Recalculate()'>Continue</button></center>"
+        conti="<center><button id=continueid onclick='Recalculate(cnew1)'>Continue</button></center>"
         document.getElementById("con").innerHTML=conti;
     }
     
@@ -61,19 +63,69 @@ function Validate(c)
             document.getElementById("ans2").style.backgroundColor="red";
              
         }
-
-        
-       
-        
-
     }
 
+}
+
+
+
+function Recalculate(c)
+{   cnew2=c;
+    document.getElementById("subdisp").innerHTML="";
+    document.getElementById("res1").innerHTML="";
+    document.getElementById("con").innerHTML="";
+
+    document.getElementById("disp3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
+    document.getElementById("input2").innerHTML=i2;
+    sub2='<input type="submit" id="sub2" value="Submit" onclick="Validate2(cnew2)" ></input>'
+    document.getElementById("submit2").innerHTML=sub2;
+
+}
+
+function Validate2(c)
+{ 
+ cnew3=c;
+
+ cnew3= cnew3.replace(/[^\w\s]|_/g, "")
+ .replace(/\s+/g, " ");
+
+
+ cnew3=cnew3.split(" ");
+
+var d=[];
+ for(i=0;i<cnew3.length;i++)
+ {
+ stemmer.setCurrent(cnew3[i]);    
+stemmer.stem();
+d.push(stemmer.getCurrent());
+ }
+ m=d.toString()
+ m1=m.split("  ");
+ console.log(m1)
+ 
+ count_root= typeCount2(d);
+ console.log(count_root);
+
+
+    
+}
+function typeCount2(w)
+{  
+s=w.join('|').toLowerCase().split('|');
+s =w.filter( function( item, index, inputArray ) {
+         
+        return inputArray.indexOf(item) == index;
+ });
+ type_count=s.length;
+
+ return type_count;
 }
 
 
 function tokenCount(c)
 {
 str=c;
+
 str= str.replace(/[^\w\s]|_/g, "")
 .replace(/\s+/g, " ");
 
@@ -89,6 +141,7 @@ token_count=t2.length;
 
  function typeCount(c) 
 {   str=c;
+    
     str= str.replace(/[^\w\s]|_/g, "")
     .replace(/\s+/g, " ");
 
@@ -106,17 +159,6 @@ token_count=t2.length;
 
 }
 
-
-function Recalculate()
-{   document.getElementById("subdisp").innerHTML="";
-    document.getElementById("res1").innerHTML="";
-    document.getElementById("con").innerHTML="";
-
-    document.getElementById("disp3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
-    document.getElementById("input2").innerHTML=i2;
-    document.getElementById("submit2").innerHTML=sub2;
-
-}
 
 
 
