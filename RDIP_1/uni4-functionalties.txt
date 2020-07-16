@@ -1,0 +1,33 @@
+                                                                                          Unit 4
+                                           
+                                                                                  List of Functionalities
+
+
+1.On clicking the Experiment icon ,dropdown menu "Select corpus" should be displayed at the center.
+
+2.There will be 3 options in dropdown corpus1,corpus2 and corpus3.On selecting any 1 the respective corpuses of sentence will be displayed on the screen.
+
+3.And the user will be asked to "Enter the number of tokens and types for the above corpus:"
+
+4.Below that there will be a table with 2 rows and 2 columns.user is required  to enter the answers there.
+
+5.Below that there will be submit button.
+
+6.Onclicking submit button user provided answers should be validated. 
+
+7.If both types and tokens count are correct:
+
+    the box's background color turns to green and below that Right Answer will be displayed and below that there will be another button saying   'Continue'.
+    Onclicking Continue button it will disppear and "Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."will be displayed
+    Again  will ask for the user to enter new types and below that there is a submit button
+    here we need to make use the concept of stemming to validate the answer.This concept is basically a method of reducing any word to its root word, example is cooking stems from cook,         boys stems from boy etc.
+    if the answer is correct it will display Right answer.
+
+8.If any one of types and tokens count are incorrect:
+   
+    the box's background color turns to red and below that "Wrong Answer" will be displayed and user can try again untill getting correct answer.
+
+9.At any time  if the user changes the corpuses,everything should disappear and starts from step 3 again.
+
+
+
