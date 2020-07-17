@@ -31,3 +31,44 @@
     top:150px;
  
 }
+
+#disp2
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size:20px;
+    vertical-align: baseline;
+    background: transparent;
+
+    font: lighter;
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+    color: blue;
+    top: 160px;
+
+}
+table,td,th {
+      height: 25px;
+      width: 25px;
+     padding: 12px;
+    border-collapse: collapse;
+    border: 1px solid darkgrey;
+  
+    color: darkslategrey;
+    font-size: large;
+    font-weight: normal;
+  }
+
+
+#tab
+{   display: none;
+    position: relative;
+    text-align: center;
+    top:200px;
+    left: 610px;
+}
+ 
