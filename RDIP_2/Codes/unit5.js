@@ -2,19 +2,19 @@
 var s1=['The child liked the chocolate','She was stopped by the bravest knight','Mary baked a cake for his birthday','She decorated the cake carefully','Mary wore a dress with polka dots'];
 
 var s2=['राम ने सीता के लिए फल तोड़ा','छोटे बच्चे पाठशाला जल्दी आयेंगे','मेहनत का फल मीठा होता है','वाह वह खूबसूरत है','पेड़ से पत्ते गिर गए'];
-var d1,d2,str;
+var d1,d2,str,v1;
 var t="";
 
 function getlanguage(v)
 {
     if(v === "null")
-    {
+    {   
         alert("Select Language");
     }
 
 
     else if(v == "eng")
-    {    
+    {    v1=v;
         document.getElementById("disp2").innerHTML="";
         document.getElementById("tab").style.display="";
         document.getElementById("demo").innerHTML="";
@@ -28,7 +28,7 @@ function getlanguage(v)
     }
      else if(v == "hin")
      {  
-
+          v1=v;
         document.getElementById("disp2").innerHTML="";
         document.getElementById("tab").style.display="";
         document.getElementById("demo").innerHTML="";
@@ -103,7 +103,8 @@ function getSentences(v)
       n=str.length;
       t="";
 
-    
+      if(v1 == "eng")
+      {
       for(i=0;i<n;i++)
       {
         t+='<tr><td>'+str[i]+'</td><td><select  id="opt"><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adjective</option><option>Adverb</option><option>Determiner</option><option>Preposition</option><option>Conjunction</option><option>Interjection</option></select></td><td id="symbol"></td><td id="actualans"></td></tr></table>';
@@ -111,5 +112,18 @@ function getSentences(v)
         document.getElementById("demo").innerHTML=t;
        
       }
-      
     }
+    if(v1 == "hin")
+    {
+    for(i=0;i<n;i++)
+    {
+      t+='<tr><td>'+str[i]+'</td><td><select  id="opt"><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adjective</option><option>Adverb</option><option>Determiner</option><option>Postposition</option><option>Conjunction</option><option>Interjection</option></select></td><td id="symbol"></td><td id="actualans"></td></tr></table>';
+      document.getElementById("tab").style.display="block";
+      document.getElementById("demo").innerHTML=t;
+     
+    }
+  }
+}
+
+      
+    
