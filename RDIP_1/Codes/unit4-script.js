@@ -11,13 +11,39 @@ var sub;
 var v1,q1;
 
 var arr1=['as','not','heard','too','if'];
+/*considering rootwords on the basis of the example provided in Theory section 
+                                                            a-->at 
+                                                            no-->not 
+                                                            he-->heard
+                                                            to-->too
+                                                            having-->have
+                                                            eat--eating
+                                                            i-->if 
+                                                             */
                                                              
                                                              
                                                              
                                                  
-var arr2=['at','would','insisted','than','himself','better','heared','he','once']; 
+var arr2=['at','would','insisted','than','himself','better','heared','he','once'];/* a-->at
+                                                                                wolf-->would
+                                                                                i-->insisted
+                                                                                he-->hear-->heared
+                                                                                him-->himself
+                                                                                that-->than
+                                                                                on-->once
+                                                                                better-->began
+                                                                                  */
 
-var arr3=['as','its','head','in','is','if','into','they','men','only'];
+var arr3=['as','its','head','in','is','if','into','they','men','only'];/*
+                                                                        a-->as
+                                                                        it-->its
+                                                                        he-->head
+                                                                        i-->in-->is-->if-->into
+                                                                        then-->they
+                                                                        me-->men
+                                                                        on-->only
+                                                                        */
+
 
                                                                        
 
@@ -157,6 +183,7 @@ t2=str.split(" ");
 token_count=t2.length;
 return token_count
 }
+
 //Function to count types(1st)
 function typeCount(c) 
 {   

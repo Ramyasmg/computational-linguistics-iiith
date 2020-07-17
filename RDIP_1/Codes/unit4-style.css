@@ -14,7 +14,7 @@ select {
 {
     padding: 1px;
     width: 1024px;
-
+    line-height: 30px;
     text-align: center;
     margin: 0 auto;
     font: 18px sans-serif;
