@@ -1,0 +1,48 @@
+                                                                                         Unit 5
+                                                                               List of Functionalities
+
+1.On clicking the Experiment icon,Select language dropdown menu will be displayed.
+
+2.This dropdown consist of 2 options
+      English
+      Hindi
+3.on selecting English another dropdownn menu should display "Select a Sentence" which consists of 5 different English/Hindi sentences depending upon the language selected.
+
+4.on selecting any one of the sentence,"Select the POS tag for corresponding words" will display.
+
+5.Below that a table consisting of 4 columns will be displayed.
+
+6.1st column -->Lexicon
+  2nd column--> POS
+  3rd and 4th initially empty
+
+7.Lexicon column should contain the words of the selected sentences.
+
+8.POS column contains the dropdown menu of parts of speech.
+
+9.user has to select the appropriate answer and when clicked on submit button if the answers are right a green color tick mark will  be displayd in the 3rd column else red 
+  color cross mark will be displayed.
+
+10.if any one answer is wrong, below submit button ,another button called "Get Answer"  should be displayed.
+
+11.On clicking get answer button all the correct answers will be displayed in the 4th column and the button "Get Answers" toggles to "Hide Answers".
+
+12.On clicking "Hide answers" all the answers should disppear and again that button toggles to "Get Answers".
+
+13.on changing the language or sentences at any time,everything shoud reset.
+
+14.To check the correct answer with the answers given by the user  and also to populate the 4th column if user enters any wrong option in the dropdown
+    we will  incorporate the POS tagger library.
+
+15.Steps to include POS tagger library
+
+  var pos = require('pos');
+var words = new pos.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); //You have to enter the sentences here
+var tagger = new pos.Tagger();
+var taggedWords = tagger.tag(words);
+for (i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    console.log(word + " /" + tag);
+}
