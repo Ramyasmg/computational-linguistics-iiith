@@ -225,18 +225,18 @@ function Validate2(c)
     count_root= typeCount2(d);
     // console.log(count_root);
     g3=document.getElementById("ans3").value;
-      if(g3 == count_root)
+    if(g3 == count_root)
      {
       document.getElementById("res2").innerHTML="Right Answer";
       document.getElementById("ans3").style.backgroundColor="green";
     
     }
-else
-{
+    else
+    {
     document.getElementById("res2").innerHTML="<font color='Red'>Wrong answer</font>";
     document.getElementById("ans3").style.backgroundColor="Red";
-}
-}
+    }
+    }
  
 //Function to count new types after stemming
 function typeCount2(w)
