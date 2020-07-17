@@ -4,6 +4,7 @@ var s1=['The child liked the chocolate','She was stopped by the bravest knight',
 var s2=['राम ने सीता के लिए फल तोड़ा','छोटे बच्चे पाठशाला जल्दी आयेंगे','मेहनत का फल मीठा होता है','वाह वह खूबसूरत है','पेड़ से पत्ते गिर गए'];
 var d1,d2,str,v1;
 var t="";
+var sub='<input type="submit" id="sub" value="Submit" " ></input>'
 
 function getlanguage(v)
 {
@@ -18,6 +19,7 @@ function getlanguage(v)
         document.getElementById("disp2").innerHTML="";
         document.getElementById("tab").style.display="";
         document.getElementById("demo").innerHTML="";
+        document.getElementById("sub").innerHTML="";
        
 
 
@@ -28,10 +30,11 @@ function getlanguage(v)
     }
      else if(v == "hin")
      {  
-          v1=v;
+        v1=v;
         document.getElementById("disp2").innerHTML="";
         document.getElementById("tab").style.display="";
         document.getElementById("demo").innerHTML="";
+        document.getElementById("sub").innerHTML="";
 
 
 
@@ -110,9 +113,11 @@ function getSentences(v)
         t+='<tr><td>'+str[i]+'</td><td><select  id="opt"><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adjective</option><option>Adverb</option><option>Determiner</option><option>Preposition</option><option>Conjunction</option><option>Interjection</option></select></td><td id="symbol"></td><td id="actualans"></td></tr></table>';
         document.getElementById("tab").style.display="block";
         document.getElementById("demo").innerHTML=t;
+        document.getElementById("sub").innerHTML=sub;
        
       }
     }
+
     if(v1 == "hin")
     {
     for(i=0;i<n;i++)
@@ -120,6 +125,7 @@ function getSentences(v)
       t+='<tr><td>'+str[i]+'</td><td><select  id="opt"><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adjective</option><option>Adverb</option><option>Determiner</option><option>Postposition</option><option>Conjunction</option><option>Interjection</option></select></td><td id="symbol"></td><td id="actualans"></td></tr></table>';
       document.getElementById("tab").style.display="block";
       document.getElementById("demo").innerHTML=t;
+      document.getElementById("sub").innerHTML=sub;
      
     }
   }

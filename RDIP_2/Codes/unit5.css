@@ -60,7 +60,7 @@ select
     font-style: italic;
     font-weight: lighter;
     color: blue;
-    top: 160px;
+    top: 140px;
 
 }
 table,td,th {
@@ -80,11 +80,17 @@ table,td,th {
 {   display: none;
     position: relative;
     text-align: center;
-    top:200px;
-    left: 610px;
+    top:110px;
+    left:630px;
     color: darkslategrey;
 }
 tbody{
     color: darkslategrey;
+}
+#sub
+{    
+    position: relative;
+    text-align: center;
+    top: 280px;
 }
  
